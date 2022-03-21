@@ -1,4 +1,4 @@
-﻿using Penguin.Cms.Entities;
+using Penguin.Cms.Entities;
 using Penguin.Persistence.Abstractions.Attributes.Control;
 using Penguin.Persistence.Abstractions.Attributes.Relations;
 using Penguin.Persistence.Abstractions.Attributes.Validation;
@@ -29,7 +29,6 @@ namespace Penguin.Cms.InternalMessaging
         [OptionalToMany]
         [DontAllow(DisplayContexts.Any)]
         public InternalMessage Parent { get; set; }
-
 
         public bool Read { get; set; }
 
