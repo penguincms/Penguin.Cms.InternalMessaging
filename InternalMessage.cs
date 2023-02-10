@@ -2,7 +2,7 @@ using Penguin.Cms.Entities;
 using Penguin.Persistence.Abstractions.Attributes.Control;
 using Penguin.Persistence.Abstractions.Attributes.Relations;
 using Penguin.Persistence.Abstractions.Attributes.Validation;
-using Penguin.Shared.Objects.Interfaces;
+using Penguin.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -21,7 +21,7 @@ namespace Penguin.Cms.InternalMessaging
 
         [NotMapped]
         [DontAllow(DisplayContexts.Any)]
-        public bool HasSubject => !string.IsNullOrWhiteSpace(this.Subject) && this.Subject != "@";
+        public bool HasSubject => !string.IsNullOrWhiteSpace(Subject) && Subject != "@";
 
         public Guid Origin { get; set; }
 
@@ -42,7 +42,7 @@ namespace Penguin.Cms.InternalMessaging
 
         public InternalMessage()
         {
-            this.Children = new List<InternalMessage>();
+            Children = new List<InternalMessage>();
         }
     }
 }
